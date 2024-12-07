@@ -18,7 +18,7 @@ export default async function fetchUsersAction() {
     const cookie = cookiestore.get('sessionid')
     try {
 
-        const res = await axios.get<userProps>("http://localhost:8000/fetch-user", {
+        const res = await axios.get<userProps>(`${process.env.NEXT_PUBLIC_SERVER_URL}/fetch-user`, {
             withCredentials: true,
             headers: {
                 Cookie: `${cookie?.name}=${cookie?.value}` || '',
