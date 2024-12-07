@@ -20,7 +20,9 @@ export async function loginController(req, res) {
 
         //we can change cookies option as per our requirement
         const options = {
-            maxAge: 5000000
+            maxAge: 5000000,
+            sameSite: 'none',
+            secure: true
         }
         // attaching cookies to the res object
         res.cookie("sessionid", accessToken, options)
