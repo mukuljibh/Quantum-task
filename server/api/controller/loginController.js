@@ -18,8 +18,7 @@ export async function loginController(req, res) {
             maxAge: 5000000,
             sameSite: 'none',
             secure: true,  
-             httpOnly: true,
-            domain:'.vercel.app'
+             httpOnly: true           
         }
         res.cookie("sessionid", accessToken, options)
         res.status(200).json({ message: "Login successfull" })
