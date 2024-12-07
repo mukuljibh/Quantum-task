@@ -22,7 +22,8 @@ export async function loginController(req, res) {
         const options = {
             maxAge: 5000000,
             sameSite: 'none',
-            secure: true
+            secure: true,
+            httpOnly: true,
         }
         // attaching cookies to the res object
         res.cookie("sessionid", accessToken, options)
