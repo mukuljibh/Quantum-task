@@ -18,7 +18,8 @@ export async function loginController(req, res) {
             maxAge: 5000000,
             sameSite: 'none',
             secure: true,
-            httpOnly: true
+            httpOnly: true,
+            domain:"quantum--five.vercel.app"
         }
         res.cookie("sessionid", accessToken, options)
         res.status(200).json({ message: "Login successfull" })
