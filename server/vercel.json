@@ -9,7 +9,7 @@
                 },
                 {
                     "key": "Access-Control-Allow-Origin",
-                    "value": "localhost:3000" // Replace with your domain
+                    "value": "localhost:3000" 
                 },
                 {
                     "key": "Access-Control-Allow-Methods",
