@@ -19,7 +19,7 @@ export async function loginController(req, res) {
             httpOnly: true,
             secure:true,
             sameSite:'None',
-            domain : 'quantum--five.vercel.app'
+            domain : 'quantum-task-omega.vercel.app'
         }
         res.cookie("sessionid", accessToken, options)
         res.status(200).json({ message: "Login successfull" })
