@@ -20,6 +20,8 @@ export async function loginController(req, res) {
             secure:true,
             sameSite:'None',
         }
+        res.setHeader('Access-Control-Expose-Headers', 'Set-cookie');  // Expose 'name' header
+
         res.cookie("sessionid", accessToken, options)
         res.status(200).json({ message: "Login successfull" })
 
