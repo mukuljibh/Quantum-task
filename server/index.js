@@ -22,7 +22,9 @@ app.use(express.json());
 app.use(cors({
     origin: allowedOrigins,
     credentials: true,
-    optionSuccessStatus: 200
+    optionSuccessStatus: 200,
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+
 }));
 
 app.post('/test', verifyToken, testController)
