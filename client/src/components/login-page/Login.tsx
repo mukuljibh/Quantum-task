@@ -20,10 +20,22 @@ export default function Login() {
             toast.error(error?.response?.data?.message)
         }
     })
+    async function handle() {
+        try {
+            await axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/test`, "f", { withCredentials: true })
+            console.log("success")
+        }
+        catch (err) {
+            const error = err as { response?: { data?: { message: string } } }
+
+            console.log(error?.response?.data?.message)
+        }
+    }
     return (
         <>
             <ToastContainer />
             <form onSubmit={formik.handleSubmit} >
+                 <button onClick={handle}>click me</button>
                 <div className="space-y-5">
                     {loginConfig.map((item, key) => {
                         return (
