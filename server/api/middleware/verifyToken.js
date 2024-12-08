@@ -8,6 +8,9 @@ export function createAccessToken(email) {
 export async function verifyToken(req, res, next) {
     try {
         const { sessionid } = req.cookies
+        if(!sessionid){
+                res.sendStatus(403).json({ message: "No token found" })
+        }
         jwt.verify(sessionid, process.env.ACCESS_TOKEN_KEY, function (err) {
             if (err) return res.status(401).json({ message: "session expired" })
             next()
