@@ -14,7 +14,8 @@ const app = express()
 
 const allowedOrigins = [
     process.env.PUBLIC_CLIENT_URL,
-    'http://localhost:3000'
+    'http://localhost:3000',
+    https://quantum--five.vercel.app
 ];
 
 app.use(cookieParser());
