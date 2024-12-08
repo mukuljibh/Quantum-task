@@ -19,7 +19,7 @@ export async function loginController(req, res) {
             httpOnly: true,
             secure:true,
             sameSite:'None',
-            domain : 'localhost:3000'
+            domain : 'localhost'
         }
         res.cookie("sessionid", accessToken, options)
         res.status(200).json({ message: "Login successfull" })
