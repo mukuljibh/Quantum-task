@@ -6,6 +6,7 @@ export function createAccessToken(email) {
 //this middle ware is used for checks token are valid or not
 
 export async function verifyToken(req, res, next) {
+    console.log(req.cookies)
     try {
         const { sessionid } = req.cookies
         if(!sessionid){
