@@ -19,6 +19,7 @@ export async function loginController(req, res) {
             httpOnly: true,
             secure:true,
             sameSite:'None',
+            domain:'.quantum-task-omega.vercel.app'
         }
             res.setHeader('name', 'mukul bhardwaj');  // Custom header
 
